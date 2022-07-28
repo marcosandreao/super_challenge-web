@@ -12,7 +12,7 @@ import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,16 @@
+<section>
+    <mat-card class="device-card" *ngFor="let device of devices">
+        <mat-card-header>
+            <div mat-card-avatar>
+                <mat-icon [ngStyle]="{'color': device.color}" fontIcon="phone_iphone">
+                </mat-icon>
+            </div>
+            <mat-card-title>#{{device.partNumber}}</mat-card-title>
+            <mat-card-subtitle>{{device.category.name}}</mat-card-subtitle>
+        </mat-card-header>
+    </mat-card>
+</section>
+
+<a [routerLink]="'/devices/form'" mat-fab color="primary" class="md-fab-bottom-right" aria-label="Add category">
+    <mat-icon>add</mat-icon>
+</a>
