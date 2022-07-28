@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
 
 
 const routes: Routes = [
@@ -38,6 +39,7 @@ const routes: Routes = [
     MatInputModule,
     MatCardModule,
     MatDividerModule,
+    MatButtonModule,
   ]
 })
 export class CategoriesModule { }

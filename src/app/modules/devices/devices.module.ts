@@ -14,6 +14,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } from '@angular-material-components/color-picker';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
 
 const routes: Routes = [
   {
@@ -49,6 +50,7 @@ const routes: Routes = [
     NgxMatColorPickerModule,
     MatRadioModule,
     MatDividerModule,
+    MatButtonModule,
   ],
   providers: [
     CategoryResolver,
