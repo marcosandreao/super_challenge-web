@@ -12,23 +12,11 @@ export class DeviceService {
   constructor(private http: HttpClient) { }
 
   list(): Observable<Device[]> {
-    return this.http.get<Device[]>(this.url)
-      .pipe(
-        catchError((err) => {
-          console.error(err);
-          throw err;
-        })
-      )
+    return this.http.get<Device[]>(this.url);
   }
 
   save(value: any) {
-    return this.http.post<Device>(this.url, value)
-      .pipe(
-        catchError((err) => {
-          console.error(err);
-          throw err;
-        })
-      )
+    return this.http.post<Device>(this.url, value);
   }
 
 }

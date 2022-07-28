@@ -12,25 +12,11 @@ export class CategoryService {
   constructor(private http: HttpClient) { }
 
   list(): Observable<Category[]> {
-    return this.http.get<Category[]>(this.url)
-      .pipe(
-        catchError((err) => {
-          console.error(err);
-          throw err;
-        }
-        )
-      )
+    return this.http.get<Category[]>(this.url);
   }
 
   save(value: any) {
-    return this.http.post<Category>(this.url, value)
-      .pipe(
-        catchError((err) => {
-          console.error(err);
-          throw err;
-        }
-        )
-      )
+    return this.http.post<Category>(this.url, value);
   }
 
 }
