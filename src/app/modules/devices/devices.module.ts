@@ -11,6 +11,8 @@ import { MatCardModule } from '@angular/material/card';
 import { FormDeviceComponent } from './form-device/form-device.component';
 import { CategoryResolver } from './form-device/categories.resolver';
 import { MatSelectModule } from '@angular/material/select';
+import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } from '@angular-material-components/color-picker';
+import { MatRadioModule } from '@angular/material/radio';
 
 const routes: Routes = [
   {
@@ -43,9 +45,12 @@ const routes: Routes = [
     MatInputModule,
     MatCardModule,
     MatSelectModule,
+    NgxMatColorPickerModule,
+    MatRadioModule,
   ],
   providers: [
     CategoryResolver,
+    { provide: MAT_COLOR_FORMATS, useValue: NGX_MAT_COLOR_FORMATS }
   ]
 })
 export class DevicesModule { }

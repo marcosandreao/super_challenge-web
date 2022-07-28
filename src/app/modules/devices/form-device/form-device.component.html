@@ -4,12 +4,12 @@
             <mat-label>Part Number</mat-label>
             <input matInput type="number" placeholder="Ex. 00003" formControlName="partNumber">
         </mat-form-field>
-        <mat-form-field hintLabel="Max 16 characters" appearance="fill">
-            <mat-label>Color</mat-label>
-            <input matInput #input maxlength="16" placeholder="Ex. Flagship" formControlName="color">
-            <mat-hint align="end">{{input.value.length || 0}}/16</mat-hint>
+        <mat-form-field>
+            <input matInput [ngxMatColorPicker]="picker" formControlName="color">
+            <ngx-mat-color-toggle matSuffix [for]="picker"></ngx-mat-color-toggle>
+            <ngx-mat-color-picker #picker [touchUi]="true" [color]="'primary'"></ngx-mat-color-picker>
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field>
             <mat-label>Category</mat-label>
             <mat-select formControlName="categoryId">
                 <mat-option *ngFor="let cat of categories" [value]="cat.id">
