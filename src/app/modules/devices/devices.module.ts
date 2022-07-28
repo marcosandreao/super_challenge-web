@@ -8,11 +8,21 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { FormDeviceComponent } from './form-device/form-device.component';
+import { CategoryResolver } from './form-device/categories.resolver';
+import { MatSelectModule } from '@angular/material/select';
 
 const routes: Routes = [
   {
     path: "",
     component: ListDevicesComponent,
+  },
+  {
+    path: "form",
+    component: FormDeviceComponent,
+    resolve: {
+      categories: CategoryResolver
+    }
   },
 
 ];
@@ -20,7 +30,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    ListDevicesComponent
+    ListDevicesComponent,
+    FormDeviceComponent
   ],
   imports: [
     CommonModule,
@@ -31,6 +42,10 @@ const routes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    MatSelectModule,
+  ],
+  providers: [
+    CategoryResolver,
   ]
 })
 export class DevicesModule { }
