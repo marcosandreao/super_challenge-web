@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/core/services/category.service';
+import { MessageService } from 'src/app/core/services/message.service';
 
 @Component({
   selector: 'app-form-category',
@@ -13,9 +15,12 @@ export class FormCategoryComponent implements OnInit {
     name: new FormControl('', Validators.required)
   });
 
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: CategoryService,
+    private router: Router, private activatedRoute: ActivatedRoute,
+    private messageService: MessageService) { }
 
   ngOnInit(): void {
+   
   }
 
   onSumbit() {
@@ -23,8 +28,12 @@ export class FormCategoryComponent implements OnInit {
       return;
     }
     this.categoryService.save(this.catForm.value).subscribe(r => {
-      
+      this.messageService.show("Category has been created.");
+      this.back();
     });
   }
 
+  back() {
+    this.router.navigate(['../'], { relativeTo: this.activatedRoute });
+  }
 }

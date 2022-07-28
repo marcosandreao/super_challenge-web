@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -22,6 +23,7 @@ import { MatListModule } from '@angular/material/list';
     AppRoutingModule,
     MatSidenavModule,
     MatListModule,
+    MatButtonModule,
   ],
   exports: [
     HeaderComponent,

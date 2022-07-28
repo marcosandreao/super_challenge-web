@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutsModule } from './layouts/layouts.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -10,6 +11,7 @@ import { LayoutsModule } from './layouts/layouts.module';
   imports: [
     CommonModule,
     LayoutsModule,
+    MatSnackBarModule,
   ],
   exports: [
     LayoutsModule

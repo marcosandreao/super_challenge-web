@@ -8,6 +8,8 @@ import { FormCategoryComponent } from './form-category/form-category.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 const routes: Routes = [
@@ -34,6 +36,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
+    MatDividerModule,
   ]
 })
 export class CategoriesModule { }

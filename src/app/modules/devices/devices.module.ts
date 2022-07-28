@@ -13,6 +13,7 @@ import { CategoryResolver } from './form-device/categories.resolver';
 import { MatSelectModule } from '@angular/material/select';
 import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } from '@angular-material-components/color-picker';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatDividerModule } from '@angular/material/divider';
 
 const routes: Routes = [
   {
@@ -47,6 +48,7 @@ const routes: Routes = [
     MatSelectModule,
     NgxMatColorPickerModule,
     MatRadioModule,
+    MatDividerModule,
   ],
   providers: [
     CategoryResolver,
