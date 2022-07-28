@@ -5,12 +5,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { FormCategoryComponent } from './form-category/form-category.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 const routes: Routes = [
   {
     path: "",
     component: ListCategoryComponent,
+  },
+  {
+    path: "form",
+    component: FormCategoryComponent,
   }
 ];
 
@@ -24,6 +31,9 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     MatTableModule,
     MatIconModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
   ]
 })
 export class CategoriesModule { }

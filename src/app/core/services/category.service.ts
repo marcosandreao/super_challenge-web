@@ -22,4 +22,15 @@ export class CategoryService {
       )
   }
 
+  save(value: any) {
+    return this.http.post<Category>(this.url, value)
+      .pipe(
+        catchError((err) => {
+          console.error(err);
+          throw err;
+        }
+        )
+      )
+  }
+
 }
