@@ -1,0 +1,26 @@
+<div class="container mt-3">
+    <mat-card>
+        <mat-card-title>
+            <div class="d-flex align-items-center">
+                <button mat-mini-fab color="primary" type="button" (click)="back()">
+                    <mat-icon>arrow_back</mat-icon>
+                </button>
+                <span class="ms-3">New Category</span>
+            </div>
+        </mat-card-title>
+        <mat-divider></mat-divider>
+        <form [formGroup]="catForm" (submit)="onSumbit()">
+            <section class="row mt-3">
+                <mat-form-field hintLabel="Max 128 characters" appearance="fill" class="col">
+                    <mat-label>Name</mat-label>
+                    <input matInput #input maxlength="128" placeholder="Ex. Flagship" formControlName="name">
+                    <mat-hint align="end">{{input.value.length || 0}}/128</mat-hint>
+                </mat-form-field>
+            </section>
+            <section class="d-flex justify-content-end mt-3">
+                <button mat-raised-button color="warn" (click)="back()">Cancel</button>
+                <button mat-raised-button color="primary" class="ms-3" type="submit">Save</button>
+            </section>
+        </form>
+    </mat-card>
+</div>

@@ -1,0 +1,38 @@
+<div class="container  mt-3">
+    <form [formGroup]="deviceForm" (submit)="onSumbit()">
+        <mat-card>
+            <mat-card-title>
+                <div class="d-flex align-items-center">
+                    <button mat-mini-fab color="primary" type="button" (click)="back()">
+                        <mat-icon>arrow_back</mat-icon>
+                    </button>
+                    <span class="ms-3">New Device</span>
+                </div>
+            </mat-card-title>
+            <mat-divider></mat-divider>
+            <section class="row mt-3">
+                <mat-form-field hintLabel="Max 128 characters" appearance="fill" class="col-12">
+                    <mat-label>Part Number</mat-label>
+                    <input matInput type="number" placeholder="Ex. 00003" formControlName="partNumber">
+                </mat-form-field>
+                <mat-form-field class="col-3 mb-3">
+                    <input matInput [ngxMatColorPicker]="picker" formControlName="color" placeholder="Color picker">
+                    <ngx-mat-color-toggle matSuffix [for]="picker"></ngx-mat-color-toggle>
+                    <ngx-mat-color-picker #picker [touchUi]="true" [color]="'primary'"></ngx-mat-color-picker>
+                </mat-form-field>
+                <mat-form-field class="col">
+                    <mat-label>Category</mat-label>
+                    <mat-select formControlName="categoryId">
+                        <mat-option *ngFor="let cat of categories" [value]="cat.id">
+                            {{cat.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </section>
+            <section class="d-flex justify-content-end">
+                <button mat-raised-button color="warn" (click)="back()">Cancel</button>
+                <button mat-raised-button color="primary" class="ms-3" type="submit">Save</button>
+            </section>
+        </mat-card>
+    </form>
+</div>
